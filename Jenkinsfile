@@ -1,9 +1,25 @@
 pipeline {
     agent any 
-    stages {
+    
+    parameters {
+	  choice choices: ['vivado', 'quartus'], description: 'Please choose ur vendor from this list', name: 'Tool'
+	  }
+
+	environment {
+	    DISABLE_AUTH = 'true'
+	    DB_ENGINE    = 'sqlite'
+	    LM_LICENSE_FILE = '/zin/tools/master.licenses/mentor/license.dat'
+	    PATH = "/wv/syntools/pnr/xilinx/vivado/2019.2/ixl-x64/Vivado/2019.2/bin/:${env.PATH}"
+	}
+
+	
+	stages {
         stage('Create_Project') { 
             steps {
-               echo "creating project"  
+               echo "creating project"
+			   sh '''
+			      vivado -mode tcl -source  ./scripts/create_project.tcl 
+			   '''
             }
         }
         stage('Check Syntax') { 
