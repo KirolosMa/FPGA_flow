@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Create_Project') { 
             steps {
-               sh " echo "creating project" " 
+               echo "creating project"  
             }
         }
         stage('Check Syntax') { 
             steps {
-              sh ' echo syntax '                
+               echo "syntax"                
             }
         }
         stage('Synth') { 
             steps {
-                 sh 'echo syn'
+                 echo "Synth"
             }
         }
     }
