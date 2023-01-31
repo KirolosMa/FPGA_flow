@@ -12,14 +12,18 @@ pipeline {
 	    PATH = "/wv/syntools/pnr/xilinx/vivado/2019.2/ixl-x64/Vivado/2019.2/bin/:${env.PATH}"
 	}
 
-	
+
 	stages {
         stage('Create_Project') { 
             steps {
-               echo "creating project"
-			   sh '''
-			      vivado -mode tcl -source  ./scripts/create_project.tcl 
-			   '''
+			  if (paramas.Tool == 'vivado') {
+                 echo "##-----------------creating project-----------------##"
+			     sh '''
+			        vivado -mode tcl -source  ./scripts/create_project.tcl 
+			     '''
+			   } else {
+			     echo " Creating project for Quartus "
+			   }
             }
         }
         stage('Check Syntax') { 
