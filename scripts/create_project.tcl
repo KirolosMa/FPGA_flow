@@ -11,6 +11,12 @@ create_project -force project_testing_flow ./project_testing_flow
 add_files {./src/}
 
 import_files -force
+# A place holder for a script that will detect
+# Library for each hdl file. 
+# This script will return dict with name of Library
+# And the associated hdl file given a directory of 
+# source files 
 
-# 3. 
-update_compile_order 
+
+# 3.Update orded  
+update_compile_order -fileset sources_1
