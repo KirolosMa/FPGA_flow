@@ -16,7 +16,7 @@ pipeline {
 	stages {
         stage('Create_Project') { 
             steps {
-			  if (paramas.Tool == 'vivado') {
+			  if (params.Tool == 'vivado') {
                  echo "##-----------------creating project-----------------##"
 			     sh '''
 			        vivado -mode tcl -source  ./scripts/create_project.tcl 
