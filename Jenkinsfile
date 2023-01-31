@@ -16,15 +16,17 @@ pipeline {
 	stages {
         stage('Create_Project') { 
             steps {
-			  if ( Tool == 'vivado') {
-                 echo "##-----------------creating project-----------------##"
-			     sh '''
-			        vivado -mode tcl -source  ./scripts/create_project.tcl 
-			     '''
-			   } else {
-			     echo " Creating project for Quartus "
+			  script {
+			    if ( params.Tool == 'vivado') {
+                   echo "##-----------------creating project-----------------##"
+			       sh '''
+			          vivado -mode tcl -source  ./scripts/create_project.tcl 
+			       '''
+			     } else {
+			       echo " Creating project for Quartus "
 			   }
-            }
+              }
+			}
         }
         stage('Check Syntax') { 
             steps {
