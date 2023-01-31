@@ -36,7 +36,7 @@ pipeline {
                  echo "##------------------ Checking syntax --------------------##"
 			     if ( params.Tool == 'vivado') {
 				   sh '''
-				      vivado -mode tcl -source ./script/check_syntax.tcl 
+				      vivado -mode tcl -source ./scripts/check_syntax.tcl 
 				   '''
 				 } else {
 				   echo " Checking Syntax for Quartus "
