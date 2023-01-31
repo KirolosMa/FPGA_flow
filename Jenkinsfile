@@ -28,11 +28,24 @@ pipeline {
               }
 			}
         }
-        stage('Check Syntax') { 
+        
+		// Stage two for checking the syntax 
+		stage('Check Syntax') { 
             steps {
-               echo "syntax"                
+			  script {
+                 echo "##------------------ Checking syntax --------------------##"
+			     if ( params.Tool == 'vivado') {
+				   sh '''
+				      vivado -mode tcl -source ./script/check_syntax.tcl 
+				   '''
+				 } else {
+				   echo " Checking Syntax for Quartus "
+				 }
+			  }
             }
         }
+
+
         stage('Synth') { 
             steps {
                  echo "Synth"
