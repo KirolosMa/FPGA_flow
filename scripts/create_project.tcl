@@ -19,7 +19,7 @@ file mkdir $outputDir
 #source directory
 set prj_src_dir ../src
 #set_part xc7k70tfbg484-2
-set_part xc7a200tffg1156-1
+#set_part xc7a200tffg1156-1
 #
 # STEP#1: setup design sources and constraints
 #
