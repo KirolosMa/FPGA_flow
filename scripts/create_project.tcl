@@ -14,10 +14,10 @@ set TIME_start [clock clicks -milliseconds]
 #
 # STEP#0: define output directory area and set part
 #
-set outputDir ../output             
+set outputDir ./output             
 file mkdir $outputDir
 #source directory
-set prj_src_dir ../src
+set prj_src_dir ./src
 #set_part xc7k70tfbg484-2
 #set_part xc7a200tffg1156-1
 #
