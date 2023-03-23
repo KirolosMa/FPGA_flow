@@ -10,7 +10,7 @@ open_proj project_testing_flow/project_testing_flow.xpr
 set msg [check_syntax  -fileset sources_1 -return_string]
 set ret_val 0
   
-if { regexp -nocase {warning} $msg }  {
+if { [regexp -nocase {warning} $msg] }  {
   set ret_val 0
 }
 	 
