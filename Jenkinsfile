@@ -82,7 +82,7 @@ pipeline {
         success {
             mail to: "${EMAIL_TO}",
             subject: "[CI]: Pipeline Completed -- ${env.JOB_NAME} - # ${env.BUILD_NUMBER}",
-            body:  EmailText
+            body: "Everything works fine"  
         }   
     
         failure {
