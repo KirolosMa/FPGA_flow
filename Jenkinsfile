@@ -9,7 +9,7 @@ pipeline {
 	    DISABLE_AUTH = 'true'
 	    DB_ENGINE    = 'sqlite'
 	    LM_LICENSE_FILE = '/zin/tools/master.licenses/mentor/license.dat'
-	    PATH = "/wv/syntools/pnr/xilinx/vivado/2018.2/ixl-x64/Vivado/2018.2/bin/:${env.PATH}"
+	    PATH = "/wv/syntools/pnr/xilinx/vivado/2019.2/ixl-x64/Vivado/2019.2/bin/:${env.PATH}"
 	}
 
 
