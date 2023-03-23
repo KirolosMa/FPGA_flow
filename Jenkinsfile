@@ -15,7 +15,7 @@ pipeline {
 	    LM_LICENSE_FILE = '/zin/tools/master.licenses/mentor/license.dat'
 	    PATH = "/wv/syntools/pnr/xilinx/vivado/2019.2/ixl-x64/Vivado/2019.2/bin/:${env.PATH}"
 	    EMAIL_TO         = 'Kirolos.mikhael97@gmail.com'
-            PROJECT_NAME     = 'fpga_flow'
+        PROJECT_NAME     = 'fpga_flow'
 	    
 	}
 
@@ -58,6 +58,15 @@ pipeline {
                  echo "Synth"
             }
         }
+        
+		stage('Simulation') {
+		   steps {
+		     script {
+			 	echo "#------------------- Simulation ----------------##"
+
+			 }
+		   }
+		}
 
 		stage('PnR') {
 		   steps {
